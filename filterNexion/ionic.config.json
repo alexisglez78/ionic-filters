@@ -1,0 +1,7 @@
+{
+  "name": "filterNexion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

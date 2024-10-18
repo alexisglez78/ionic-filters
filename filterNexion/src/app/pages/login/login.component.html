@@ -1,23 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Iniciar Sesión</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
 
-<ion-content>
-  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-    <ion-item>
-      <ion-label position="floating">Correo Electrónico</ion-label>
-      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
-    </ion-item>
+  <!-- Login Page -->
+  <div class="container"  *ngIf="screen == 'signin'">
+    <h1 class="heading">👋 Bienvenido<br><br></h1>
+    <p class="para">inicia sesión para continuar!</p>
+    <form [formGroup]="formData">
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Email </legend>
+          <ion-input formControlName="email" type="email" placeholder="name@domain.com"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Password</legend>
+          <ion-input formControlName="password" type="password" placeholder="*******"></ion-input>
+        </fieldset>
+      </ion-item>
+      <p class="forget-text"><a >Forgot Password?</a></p>
+      <p class="signup-text">I'm a new user&nbsp;<a >Sign Up?</a></p>
+      <ion-button class="login-button" (click)="login()" expand="block">Login</ion-button>
+    </form>
+  </div>
 
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
-    </ion-item>
 
-    <ion-button expand="full" type="submit" [disabled]="!loginForm.form.valid">Iniciar Sesión</ion-button>
-  </form>
-
-  <ion-button expand="full" color="light" routerLink="/register">¿No tienes una cuenta? Regístrate</ion-button>
 </ion-content>
+<ion-footer color="white">
+  <ion-toolbar>
+    <p class="copyright">Creado por paul alexis</p>
+  </ion-toolbar>
+</ion-footer>
+

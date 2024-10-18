@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nexion</ion-title>
+
+    <!-- Aquí agregamos el toggle para cambiar de tema -->
+    <ion-toggle (ionChange)="onThemeToggle($event)" slot="end"></ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-reusable-filter></app-reusable-filter>  <!-- Aquí llamas a tu componente -->
+</ion-content>

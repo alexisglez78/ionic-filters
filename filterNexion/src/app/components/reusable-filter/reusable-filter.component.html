@@ -1,0 +1,37 @@
+<div class="filter-container">
+  <ion-item>
+    <ion-label position="floating">Buscar</ion-label>
+    <ion-input type="text" [(ngModel)]="searchTerm" (ionInput)="onSearchChange()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha desde</ion-label>
+    <ion-datetime [(ngModel)]="startDate" (ionChange)="onDateChange()"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha hasta</ion-label>
+    <ion-datetime [(ngModel)]="endDate" (ionChange)="onDateChange()"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Categoría</ion-label>
+    <ion-select [(ngModel)]="selectedCategory" (ionChange)="onCategoryChange()">
+      <ion-select-option value="todos">Todos</ion-select-option>
+      <ion-select-option value="categoria1">Categoría 1</ion-select-option>
+      <ion-select-option value="categoria2">Categoría 2</ion-select-option>
+      <ion-select-option value="categoria3">Categoría 3</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="applyFilters()">Aplicar Filtros</ion-button>
+
+  <ion-item>
+    <ion-button [disabled]="currentPage === 1" (click)="previousPage()">Anterior</ion-button>
+    <ion-button [disabled]="currentPage === totalPages" (click)="nextPage()">Siguiente</ion-button>
+  </ion-item>
+
+  <div>
+    Página {{ currentPage }} de {{ totalPages }}
+  </div>
+</div>

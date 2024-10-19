@@ -74,7 +74,6 @@ export class ProductsService {
     }
 
     if (startDate && endDate) {
-      console.log(startDate,"+", endDate,"por fechas");
 
       this.filtered = this.filtered.filter((product) => {
         const productDate = new Date(product.date); // Convierte la fecha del producto
@@ -89,17 +88,13 @@ export class ProductsService {
       });
     }
     this.filteredProducts = this.filtered;
-    console.log("falaaaaaa",this.filteredProducts);
     this.totalPages = Math.ceil(this.filteredProducts.length / this.pageSize);
-    console.log(this.totalPages,"paginas");
     return this.getPaginatedProducts();
   }
   getPaginatedProducts(): any[] {
     const startIndex = (this.currentPage - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
-    console.log(this.filteredProducts.slice(startIndex, endIndex),"paul");
     let x = this.filteredProducts.slice(startIndex, endIndex);
-    console.log(x ,"tache huarache");
     return x;
   }
 

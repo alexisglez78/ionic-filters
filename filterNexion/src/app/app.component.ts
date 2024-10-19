@@ -13,7 +13,6 @@ export class AppComponent {
 
   initializeApp() {
     const savedTheme = localStorage.getItem('darkMode');
-    console.log("savedTheme",savedTheme);
     if (savedTheme) {
       this.toggleDarkTheme(savedTheme === 'true');
     } else {
@@ -21,7 +20,6 @@ export class AppComponent {
       const prefersDark = window.matchMedia('(prefers-color-scheme: light)');
       this.toggleDarkTheme(prefersDark.matches);
 
-      console.log(prefersDark);
     }
   }
 

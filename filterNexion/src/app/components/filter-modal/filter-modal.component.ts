@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
+import { LogsService } from 'src/app/services/logs.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -17,18 +19,15 @@ export class FilterModalComponent {
 
   constructor(
     private modalCtrl: ModalController,
-    private productService: ProductsService
+    private productService: ProductsService,
+    private AuthService: AuthService,
+    private logService: LogsService
   ) {}
 
   onDateChange() {
-    // Lógica para manejar el cambio en las fechas
-    console.log('Fecha desde:', this.startDate);
-    console.log('Fecha hasta:', this.endDate);
   }
 
   onCategoryChange() {
-    // Lógica para manejar el cambio en la categoría
-    console.log('Categoría seleccionada:', this.selectedCategory);
   }
 
   applyFilters() {
@@ -44,6 +43,17 @@ export class FilterModalComponent {
     );
 
     // Cerrar el modal después de aplicar los filtros
+    const appliedFilters = {
+      searchTerm: this.searchTerm,
+      startDate: this.startDate,
+      endDate: this.endDate,
+      selectedCategory: this.selectedCategory,
+      appliedAt: new Date(),
+      tkn: this.AuthService.getToken()  // Datos del usuario (si aplican)
+    };
+    this.logService.addLog(appliedFilters);
+
+
     this.modalCtrl.dismiss();
   }
 

@@ -2,6 +2,8 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { FilterModalComponent } from 'src/app/components/filter-modal/filter-modal.component';
+import { AuthService } from 'src/app/services/auth.service';
+import { LogsService } from 'src/app/services/logs.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -22,7 +24,9 @@ export class HomePage {
 
   constructor(
     private modalController: ModalController,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    public logService:LogsService,
+    private AuthService:AuthService
   ) {
     // Inicializar el estado del tema según la preferencia almacenada
     this.isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -32,7 +36,6 @@ export class HomePage {
     this.loadProducts();
   }
   ngDoCheck() {
-    console.log('leyendo de nuevo');
     if (this.filteredProducts !== this.productsService.filteredProducts) {
       this.products = this.productsService.getPaginatedProducts();
       this.totalPages = this.productsService.totalPages;
@@ -81,9 +84,18 @@ export class HomePage {
       this.endDate,
       this.selectedCategory
     );
-    console.log('productos 2', this.products);
     this.totalPages = this.productsService.totalPages;
     this.currentPage = this.productsService.currentPage;
+
+    const appliedFilters = {
+      searchTerm: this.searchTerm,
+      startDate: this.startDate,
+      endDate: this.endDate,
+      selectedCategory: this.selectedCategory,
+      appliedAt: new Date(),
+      tkn: this.AuthService.getToken()  // Datos del usuario (si aplican)
+    };
+    this.logService.addLog(appliedFilters);
   }
 
   // Aplicar filtros

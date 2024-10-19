@@ -26,7 +26,6 @@ export class LoginComponent {
   }
 
   login(){
-    console.log("mandando data");
     var formData: any = new FormData();
 
     if(this.formData.valid){

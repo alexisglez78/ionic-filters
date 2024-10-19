@@ -1,0 +1,16 @@
+{
+  "source": {
+    "include": ["src/app"],
+    "includePattern": ".+\\.(js|ts)$",
+    "excludePattern": "(node_modules|docs|.*\\.spec\\.ts)",
+    "exclude": ["src/zone-flags.ts"]
+
+  },
+  "opts": {
+    "destination": "docs",
+    "recurse": true
+  },
+  "typescript": {
+    "tsconfig": "./tsconfig.json"
+  }
+}

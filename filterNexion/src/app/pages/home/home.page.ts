@@ -11,7 +11,7 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  isDarkMode: boolean;
+  isDarkMode: boolean = false;
   currentPage: number = 1;
   totalPages: number = 0; // Cambia este valor según tus necesidades
   products: any[] | undefined;

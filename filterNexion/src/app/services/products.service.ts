@@ -40,9 +40,9 @@ export class ProductsService {
       price: 350,
       category: 'lacteo',
       date: new Date('2024-06-01'),
-    },
+    }
   ];
-  filtered = this.products;
+  filtered: any[] | undefined;
   // Filtros y paginación
   currentPage: number = 1;
   pageSize: number = 2;

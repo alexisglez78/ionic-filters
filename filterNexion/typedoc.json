@@ -1,0 +1,9 @@
+{
+  "entryPoints": ["src/app/**/*.ts"],
+  "out": "docs",
+  "exclude": ["node_modules", "**/*.spec.ts"],
+  "theme": "default",
+  "readme": "README.md",
+  "excludePrivate": true,
+  "excludeProtected": true
+}

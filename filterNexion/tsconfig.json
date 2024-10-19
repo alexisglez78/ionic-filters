@@ -16,13 +16,14 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2022",
-    "module": "es2020",
     "lib": [
       "es2018",
       "dom"
     ],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "module": "commonjs",
+    "target": "ES2022",
+    "types": ["jasmine", "node"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -31,7 +32,6 @@
     "strictTemplates": true
   },
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts"  // Excluye archivos de prueba
+    "node_modules"
   ]
 }

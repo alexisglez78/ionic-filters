@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module'; // Importa el routing module
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { LoginRoutingModule } from './login-routing.module'; // Importa el routi
     FormsModule,
     IonicModule,
     LoginRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [LoginComponent]
 })

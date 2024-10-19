@@ -10,7 +10,7 @@ import { AppComponent } from 'src/app/app.component';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
 })
-export class SettingsPage {
+export class SettingsComponent  {
   /**
    * Indica si el modo oscuro está habilitado.
    * @type {boolean}

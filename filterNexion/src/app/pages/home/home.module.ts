@@ -4,7 +4,6 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
-import { SettingsPage } from 'src/app/components/settings/settings.component';
 import { FilterModalComponent } from 'src/app/components/filter-modal/filter-modal.component';
 
 
@@ -16,6 +15,6 @@ import { FilterModalComponent } from 'src/app/components/filter-modal/filter-mod
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage,SettingsPage,FilterModalComponent]
+  declarations: [HomePage,FilterModalComponent]
 })
 export class HomePageModule {}

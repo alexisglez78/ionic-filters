@@ -1,12 +1,43 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Nexion</ion-title>
-
-    <!-- Aquí agregamos el toggle para cambiar de tema -->
-    <ion-toggle (ionChange)="onThemeToggle($event)" slot="end"></ion-toggle>
+<ion-header class="header-home">
+  <ion-toolbar class="toolbar-search">
+    <ion-searchbar animated="true" placeholder="Buscar Productos" [(ngModel)]="searchTerm" (ionInput)="onSearchChange()"></ion-searchbar>
   </ion-toolbar>
+
 </ion-header>
 
+<!-- <ion-content>
+  <app-reusable-filter></app-reusable-filter>
+</ion-content> -->
+
 <ion-content>
-  <app-reusable-filter></app-reusable-filter>  <!-- Aquí llamas a tu componente -->
+  <ion-grid class="filters-grid">
+    <ion-row>
+      <ion-col><ion-button (click)="openFilterModal()" class="button-modal-filter">
+          <ion-icon slot="icon-only" name="funnel-outline"></ion-icon>
+          filtros
+        </ion-button></ion-col>
+      <ion-col class="toggle-grid">
+        <!-- <ion-toggle (ionChange)="onThemeToggle($event)" ></ion-toggle> -->
+        <ion-button (click)="deletefilter()">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item *ngFor="let product of products">
+      {{ product.name }} - {{ product.price | currency }}
+    </ion-item>
+  </ion-list>
+
+  <div class="buttons-action">
+    <ion-button [disabled]="currentPage === 1" (click)="previousPage()">Anterior</ion-button>
+    <ion-button [disabled]="currentPage === totalPages" (click)="nextPage()">Siguiente</ion-button>
+  </div>
+
+  <div>
+    Página {{ currentPage }} de {{ totalPages }}
+  </div>
 </ion-content>

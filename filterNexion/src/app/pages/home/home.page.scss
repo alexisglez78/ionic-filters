@@ -1,3 +1,15 @@
+:root {
+  --button-text-color: black;
+  --button-background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --button-text-color: white;
+    --button-background-color: black;
+  }
+}
+
 #container {
   text-align: center;
 
@@ -24,4 +36,36 @@
 
 #container a {
   text-decoration: none;
+}
+
+.button-modal-filter {
+  background: none;
+  color: var(--button-text-color);
+  background-color: var(--button-background-color) !important;
+  --background: none;
+  --background-hover:none;
+}
+
+
+.toggle-grid {
+  text-align: end;
+}
+ .header-home{
+  --background:none
+ }
+ .toolbar-search{
+  background: none;
+  border: none;
+  --background: none;
+  --border-width: 0;
+  padding-top: 1rem;
+ }
+.pagination-controls{
+  --border-color: white;
+}
+.buttons-action{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }

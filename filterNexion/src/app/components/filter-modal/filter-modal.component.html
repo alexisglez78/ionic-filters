@@ -1,0 +1,32 @@
+<div class="filter-container">
+  <ion-buttons slot="end" class="closeModal">
+    <ion-button (click)="closeModal()">
+      <ion-icon slot="icon-only" name="close"></ion-icon> <!-- Ícono de tache -->
+    </ion-button>
+  </ion-buttons>
+
+  <ion-label class="title">Fecha de inicio</ion-label>
+
+  <ion-item class="filter-item">
+    <ion-datetime [(ngModel)]="startDate" (ionChange)="onDateChange()" presentation="date"></ion-datetime>
+
+  </ion-item>
+
+  <ion-label class="title">Fecha de termino</ion-label>
+  <ion-item class="filter-item">
+    <ion-datetime [(ngModel)]="endDate" (ionChange)="onDateChange()" presentation="date"></ion-datetime>
+  </ion-item>
+
+  <ion-label class="title">Categoria</ion-label>
+  <ion-item class="filter-item">
+    <ion-select [(ngModel)]="selectedCategory" (ionChange)="onCategoryChange()">
+      <ion-select-option value="todos">Todos</ion-select-option>
+      <ion-select-option value="lacteo">lacteo</ion-select-option>
+      <ion-select-option value="jugueteria">jugueteria</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="applyFilters()" class="apply-button">Aplicar Filtros</ion-button>
+
+
+</div>

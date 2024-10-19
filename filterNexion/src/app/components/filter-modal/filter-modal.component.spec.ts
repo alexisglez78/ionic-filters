@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ReusableFilterComponent } from './reusable-filter.component';
+import { FilterModalComponent } from './filter-modal.component';
 
-describe('ReusableFilterComponent', () => {
-  let component: ReusableFilterComponent;
-  let fixture: ComponentFixture<ReusableFilterComponent>;
+describe('FilterModalComponent', () => {
+  let component: FilterModalComponent;
+  let fixture: ComponentFixture<FilterModalComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReusableFilterComponent ],
+      declarations: [ FilterModalComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ReusableFilterComponent);
+    fixture = TestBed.createComponent(FilterModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

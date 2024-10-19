@@ -1,3 +1,9 @@
+# Documentacion
+
+Toda la Documentacion necesaria se encuentra en la ruta filterNexion/docs/index.html
+![alt](./filterNexion/src/assets/img/doc.png)
+
+
 # Información Ficticia
 
 

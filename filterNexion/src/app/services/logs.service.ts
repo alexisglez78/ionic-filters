@@ -9,12 +9,21 @@ export class LogsService {
 
   constructor() {}
 
-  // Función para registrar el log
+  /**
+   * Añade un nuevo log a la lista de logs.
+   *
+   * @param logEntry - El registro de log que se va a agregar, puede contener información de filtros, usuario, fecha, etc.
+   */
   addLog(logEntry: any) {
     this.logs.push(logEntry);
-    console.log('Nuevo log:', logEntry); // Puedes enviar los logs a un backend o almacenarlos
+    console.log('Nuevo log:', logEntry); // Puedes enviar los logs a un backend o almacenarlos localmente.
   }
 
+  /**
+   * Retorna todos los logs almacenados.
+   *
+   * @returns Un arreglo con los logs almacenados.
+   */
   getLogs() {
     return this.logs;
   }

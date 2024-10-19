@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SettingsComponent } from './settings.component';
 import { AppComponent } from 'src/app/app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('SettingsComponent', () => {
   let component: SettingsComponent;
@@ -17,6 +18,7 @@ describe('SettingsComponent', () => {
       providers: [
         { provide: AppComponent, useValue: appComponentMock }, // Provide the mock
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA], // Agregar CUSTOM_ELEMENTS_SCHEMA aquí
     }).compileComponents();
   });
 

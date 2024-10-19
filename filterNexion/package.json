@@ -1,7 +1,7 @@
 {
   "name": "filterNexion",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Paul Alexis Glz Casas",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
     "@auth0/angular-jwt": "^5.2.0",
+    "@capacitor/android": "6.1.2",
     "@capacitor/app": "6.0.1",
     "@capacitor/core": "6.1.2",
     "@capacitor/haptics": "6.0.1",

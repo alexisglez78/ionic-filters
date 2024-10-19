@@ -101,6 +101,16 @@ Para ejecutar las pruebas unitarias, asegúrate de tener instalado:
 
 ![Mi Imagen](./src/assets/img/Captura-all.png)
 ![Mi Imagen](./src/assets/img/captura-console.png)
+
+## Ultimos Detalles
+
+Se agrego un componente para hacer un cambio de Tema, se visualiza de esta forma en mobile android.
+
+<img src="./src/assets/img/login.jpg" alt="Descripción de la imagen" width="200" />
+<img src="./src/assets/img/home.jpg" alt="Descripción de la imagen" width="200" />
+<img src="./src/assets/img/calendar.jpg" alt="Descripción de la imagen" width="200" />
+<img src="./src/assets/img/categoria.jpg" alt="Descripción de la imagen" width="200" />
+
 ### Comando para Ejecutar Pruebas
 
 

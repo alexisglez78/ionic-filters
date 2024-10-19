@@ -116,10 +116,3 @@ Se agrego un componente para hacer un cambio de Tema, se visualiza de esta forma
 
 ```bash
 ng test
-
-
-
-
-
-
-
